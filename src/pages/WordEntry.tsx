@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ArrowLeft, BookOpen, BookText } from "lucide-react";
+import { BookOpen, BookText } from "lucide-react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,6 +9,10 @@ import { getWordById } from "@/data/dictionary";
 const WordEntry = () => {
   const { id } = useParams<{ id: string }>();
   const word = getWordById(id || "");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!word) return <Navigate to="/dictionary" replace />;
 
@@ -19,9 +24,9 @@ const WordEntry = () => {
         <div className="container max-w-2xl">
           {/* Nav */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-10">
-            <Link to="/reading" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors">
-              <ArrowLeft size={14} />
-              Назад к тексту
+            <Link to="/reading" className="inline-flex items-center gap-2 text-sm text-accent hover:underline">
+              <BookOpen size={16} />
+              Вернуться к чтению
             </Link>
             <Link to="/dictionary" className="inline-flex items-center gap-1.5 text-sm text-accent hover:underline">
               <BookText size={14} />

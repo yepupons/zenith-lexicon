@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { fullTextSections } from "@/data/dictionary";
 import { renderWithGlossary } from "@/lib/renderGlossary";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const makeAnchorId = (value: string) =>
   value
@@ -13,6 +14,10 @@ const makeAnchorId = (value: string) =>
     .replace(/\s+/g, "-");
 
 const FullText = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -20,8 +25,8 @@ const FullText = () => {
       <main className="flex-1 py-10 md:py-16 px-6">
         <div className="container max-w-2xl">
           <div className="flex items-center justify-between mb-8">
-            <Link to="/reading" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors">
-              Назад к фрагментам
+            <Link to="/" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors">
+              На главную
             </Link>
           </div>
 
@@ -30,7 +35,7 @@ const FullText = () => {
             animate={{ opacity: 1, y: 0 }}
             className="mb-12 text-center"
           >
-            <p className="text-xs tracking-widest uppercase text-muted-foreground mb-2">Полный текст</p>
+            <p className="text-xs tracking-widest uppercase text-muted-foreground mb-2">Чтение</p>
             <h1 className="font-serif text-3xl md:text-4xl font-bold text-primary">
               Юности честное зерцало
             </h1>

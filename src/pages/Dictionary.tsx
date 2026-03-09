@@ -25,7 +25,7 @@ const Dictionary = () => {
           w.shortDefinition.toLowerCase().includes(q)
       );
     }
-    return result;
+    return [...result].sort((a, b) => a.word.localeCompare(b.word, "ru"));
   }, [search, activeLetter]);
 
   return (

@@ -50,7 +50,7 @@ const Index = () => {
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-primary-foreground px-8 py-3 text-sm font-medium hover:bg-primary/90 transition-colors"
             >
               <BookOpen size={18} />
-              Начать чтение
+              Читать
             </Link>
             <Link
               to="/dictionary"
@@ -84,9 +84,9 @@ const Index = () => {
           <h2 className="font-serif text-2xl md:text-3xl font-semibold text-center mb-12">Как это работает</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { step: "01", title: "Читайте текст", desc: "Откройте фрагменты произведения в удобном для чтения виде" },
-              { step: "02", title: "Наводите на слова", desc: "Выделенные слова покажут краткое пояснение при наведении" },
-              { step: "03", title: "Изучайте подробнее", desc: "Переходите к полным словарным статьям и задавайте вопросы AI" },
+              { step: "01", title: "Откройте текст", desc: "Читайте произведение, разбитое на разделы с оглавлением" },
+              { step: "02", title: "Узнавайте значение слов", desc: "Выделенные слова покажут краткое пояснение при наведении" },
+              { step: "03", title: "Изучайте словарь", desc: "Переходите к полным статьям со значениями и примерами" },
             ].map((item, i) => (
               <motion.div
                 key={i}
