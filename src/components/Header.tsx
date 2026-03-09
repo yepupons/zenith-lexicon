@@ -13,9 +13,9 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="sticky top-0 z-50 border-b border-primary/70 bg-primary text-primary-foreground shadow-sm">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="font-serif text-xl font-semibold text-primary tracking-wide">
+        <Link to="/" className="font-serif text-xl font-semibold italic tracking-wide text-primary-foreground">
           Зерцало
         </Link>
 
@@ -25,8 +25,10 @@ const Header = () => {
             <Link
               key={l.to}
               to={l.to}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                location.pathname === l.to ? "text-primary" : "text-muted-foreground"
+              className={`text-sm font-medium italic transition-colors hover:text-primary-foreground ${
+                location.pathname === l.to
+                  ? "text-primary-foreground underline underline-offset-4 decoration-primary-foreground/70"
+                  : "text-primary-foreground/80"
               }`}
             >
               {l.label}
@@ -36,7 +38,7 @@ const Header = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 text-foreground"
+          className="md:hidden p-2 text-primary-foreground"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Меню"
         >
@@ -46,14 +48,16 @@ const Header = () => {
 
       {/* Mobile nav */}
       {mobileOpen && (
-        <nav className="md:hidden border-t bg-background px-6 py-4 animate-fade-in">
+        <nav className="md:hidden border-t border-primary/70 bg-primary px-6 py-4 animate-fade-in">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
               onClick={() => setMobileOpen(false)}
-              className={`block py-3 text-sm font-medium transition-colors ${
-                location.pathname === l.to ? "text-primary" : "text-muted-foreground"
+              className={`block py-3 text-sm font-medium italic transition-colors ${
+                location.pathname === l.to
+                  ? "text-primary-foreground underline underline-offset-4 decoration-primary-foreground/70"
+                  : "text-primary-foreground/80"
               }`}
             >
               {l.label}

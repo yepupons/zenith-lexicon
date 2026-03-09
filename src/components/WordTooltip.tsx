@@ -66,7 +66,7 @@ const WordTooltip = ({ wordId, children }: Props) => {
           >
             <p className="font-serif text-sm font-semibold text-tooltip-fg mb-1">{word.word}</p>
             <p className="text-xs text-tooltip-fg/80 leading-relaxed">{word.shortDefinition}</p>
-            <p className="text-xs text-tooltip-fg/50 mt-2">Нажмите для подробностей →</p>
+            <p className="text-xs text-tooltip-fg/50 mt-2">Нажмите на слово для подробностей →</p>
           </motion.div>
         )}
       </AnimatePresence>

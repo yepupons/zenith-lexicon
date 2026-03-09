@@ -8,6 +8,7 @@ import Reading from "./pages/Reading";
 import Dictionary from "./pages/Dictionary";
 import WordEntry from "./pages/WordEntry";
 import NotFound from "./pages/NotFound";
+import FullText from "./pages/FullText";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/reading" element={<Reading />} />
+          <Route path="/reading/full" element={<FullText />} />
           <Route path="/dictionary" element={<Dictionary />} />
           <Route path="/word/:id" element={<WordEntry />} />
           <Route path="*" element={<NotFound />} />

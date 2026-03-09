@@ -3,7 +3,6 @@ import { ArrowLeft, BookOpen, BookText } from "lucide-react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import AIChat from "@/components/AIChat";
 import { getWordById } from "@/data/dictionary";
 
 const WordEntry = () => {
@@ -19,7 +18,7 @@ const WordEntry = () => {
       <main className="flex-1 py-10 md:py-16 px-6">
         <div className="container max-w-2xl">
           {/* Nav */}
-          <div className="flex items-center justify-between mb-10">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-10">
             <Link to="/reading" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft size={14} />
               Назад к тексту
@@ -64,9 +63,6 @@ const WordEntry = () => {
               <h2 className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Современный аналог</h2>
               <p className="leading-relaxed">{word.modernEquivalent}</p>
             </div>
-
-            {/* AI Chat */}
-            <AIChat word={word.word} />
 
             {/* Bottom nav */}
             <div className="flex flex-col sm:flex-row gap-3 mt-10">
