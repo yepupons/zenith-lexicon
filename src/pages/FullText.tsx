@@ -22,7 +22,7 @@ const FullText = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-1 py-10 md:py-16 px-6">
+      <main className="flex-1 py-10 md:py-16 px-4 sm:px-6">
         <div className="container max-w-2xl">
           <div className="flex items-center justify-between mb-8">
             <Link to="/" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors">

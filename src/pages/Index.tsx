@@ -108,7 +108,7 @@ const Index = () => {
       {/* Featured words */}
       <section className="py-16 md:py-20 px-6">
         <div className="container max-w-4xl">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-8">
             <h2 className="font-serif text-2xl md:text-3xl font-semibold">Примеры слов</h2>
             <Link to="/dictionary" className="text-sm text-accent hover:underline inline-flex items-center gap-1">
               Весь словарь <ArrowRight size={14} />
